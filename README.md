@@ -24,8 +24,9 @@ Inability to compete with dynamic markets<br>
 
 markets
 
-<h1Solution</h1>
-This solution employs AI and Machine Learning for:<br>
+<h1>Solution</h1><br>
+<hr>
+<h3>This solution employs AI and Machine Learning for:</h3><br>
 Analyzing past sales and pricing data<br>
 Predicting customer demand<br>
 Dynamic pricing optimization<br>
