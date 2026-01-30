@@ -12,26 +12,28 @@ This project is based on real-world systems that are used by companies such as A
 <h1>Problem Statement</h1>
 
 <h2>The traditional pricing approaches are:</h2>
+<br>
 Static (rarely change prices)
-Manual (human-dependent)
-React slowly to market changes
-<h1>This has led to:</h1>
-Loss of potential revenue
-Missing out on demand
-Inability to compete with dynamic markets
+<br>
+Manual (human-dependent)<br>
+React slowly to market changes<br><br>
+<h1>This has led to:</h1><br>
+Loss of potential revenue<br>
+Missing out on demand<br>
+Inability to compete with dynamic markets<br>
 
 markets
 
 <h1Solution</h1>
-This solution employs AI and Machine Learning for:
-Analyzing past sales and pricing data
-Predicting customer demand
-Dynamic pricing optimization
-Suggesting the optimal price at the optimal time
-The system will automatically change prices based on:
-Demand trends
-Past performance
-Market trends
+This solution employs AI and Machine Learning for:<br>
+Analyzing past sales and pricing data<br>
+Predicting customer demand<br>
+Dynamic pricing optimization<br>
+Suggesting the optimal price at the optimal time<br>
+The system will automatically change prices based on:<br>
+Demand trends<br>
+Past performance<br>
+Market trends<br>
 Business rules (minimum and maximum price)
 
 
