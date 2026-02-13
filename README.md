@@ -1,6 +1,6 @@
 # Mini_project
 
-<h1>❤️ AI-Powered Pricing Intelligence & Dynamic Revenue Optimization Platform</h1>
+<h1>  AI-Powered Pricing Intelligence & Dynamic Revenue Optimization Platform</h1>
 Project Overview
 
 Pricing is a very crucial factor for the success of any business. If the price is set too high, it may lead to a decrease in sales, and if the price is set too low, it may lead to a decrease in profit.
