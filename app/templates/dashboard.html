@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- SIDEBAR -->
+        <div class="col-md-2 sidebar">
+
+            <h3 class="logo">AI Pricing</h3>
+
+            <ul class="nav flex-column">
+
+                <li>
+                    <a href="/dashboard" class="nav-link">Dashboard</a>
+                </li>
+
+                <li>
+                    <a href="/analytics" class="nav-link">Analytics</a>
+                </li>
+
+                <li>
+                    <a href="/ai-assistant" class="nav-link">AI Assistant</a>
+                </li>
+
+                <li>
+                    <a href="/about" class="nav-link">About</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- MAIN CONTENT -->
+        <div class="col-md-10 p-4">
+
+            <!-- TOP BAR -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+
+                <h3>Pricing Dashboard</h3>
+
+                <div>
+                    <span class="me-3">
+                        👋 Hello <b>{{current_user.username}}</b>
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- ANALYTICS CARDS -->
+            <div class="row mb-4">
+
+                <div class="col-md-4">
+                    <div class="card shadow p-3">
+                        <h6>Total Uploads</h6>
+                        <h3>{{total_uploads}}</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow p-3">
+                        <h6>Predictions Generated</h6>
+                        <h3>{{predictions}}</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow p-3">
+                        <h6>AI Accuracy</h6>
+                        <h3>{{accuracy}}%</h3>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- CSV UPLOAD -->
+            <div class="card shadow p-4 mb-4">
+
+                <h5>Upload Pricing Data</h5>
+
+                <form method="POST" enctype="multipart/form-data">
+
+                    <input type="file" name="file" class="form-control mb-3">
+
+                    <button class="btn btn-success" type="submit">
+                        Upload CSV
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- AI RESULT -->
+            {% if price %}
+
+            <div class="alert alert-success">
+
+                <h4>Recommended Price: ₹ {{price}}</h4>
+
+            </div>
+
+            {% endif %}
+
+
+            <!-- AI CHATBOT PANEL -->
+            <div class="card shadow p-4 mt-4">
+
+                <h5>AI Pricing Assistant</h5>
+
+                <div id="chat-box" style="height:200px;overflow-y:auto;border:1px solid #ddd;padding:10px"></div>
+
+                <div class="input-group mt-3">
+
+                    <input id="user-input" class="form-control" placeholder="Ask about pricing...">
+
+                    <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function sendMessage() {
+
+        let input = document.getElementById("user-input")
+
+        let msg = input.value
+
+        fetch("/api/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: msg })
+        })
+
+
+            .then(res => res.json())
+            .then(data => {
+
+                let chat = document.getElementById("chat-box")
+
+                chat.innerHTML += `<p><b>You:</b> ${msg}</p>`
+                chat.innerHTML += `<p><b>AI:</b> ${data.reply}</p>`
+
+                input.value = ""
+
+            })
+            .catch(err => {
+
+                let chat = document.getElementById("chat-box")
+                chat.innerHTML += `<p><b>AI:</b> Server error. Please try again.</p>`
+
+            })
+
+    }
+
+</script>
+
+{% endblock %}

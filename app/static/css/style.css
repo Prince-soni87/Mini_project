@@ -1,0 +1,69 @@
+.hero{
+padding:80px;
+background:linear-gradient(120deg,#4e73df,#1cc88a);
+color:white;
+border-radius:10px;
+}
+/* Sidebar */
+
+.sidebar{
+    background: linear-gradient(180deg,#1f2937,#111827);
+    min-height:100vh;
+    color:white;
+    padding:20px;
+}
+
+.logo{
+    font-weight:bold;
+    margin-bottom:30px;
+}
+
+.nav-link{
+    color:#cbd5e1;
+    padding:10px;
+    border-radius:8px;
+}
+
+.nav-link:hover{
+    background:#374151;
+    color:white;
+}
+
+.nav-link.active{
+    background:#ef4444;
+    color:white;
+}
+
+/* Cards */
+
+.card{
+    border:none;
+    border-radius:12px;
+}
+
+/* Buttons */
+
+.btn-success{
+    background:#10b981;
+    border:none;
+    border-radius:8px;
+}
+
+/* Chat Box */
+
+#chat-box{
+    background:#f9fafb;
+    border-radius:10px;
+}
+
+/* Chat Messages */
+
+.user-msg{
+    text-align:right;
+    color:#2563eb;
+}
+
+.ai-msg{
+    text-align:left;
+    color:#111827;
+}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2>AI Pricing Assistant</h2>
+
+    <div id="chat-box" style="height:300px;overflow-y:auto;border:1px solid #ddd;padding:10px"></div>
+
+    <div class="input-group mt-3">
+
+        <input id="user-input" class="form-control" placeholder="Ask about pricing...">
+
+        <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+
+    </div>
+
+</div>
+
+<script>
+
+function sendMessage(){
+
+    let input = document.getElementById("user-input")
+    let msg = input.value
+
+    fetch("/api/chat",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({message:msg})
+    })
+    .then(res=>res.json())
+    .then(data=>{
+
+        let chat=document.getElementById("chat-box")
+
+        chat.innerHTML+=`<p><b>You:</b> ${msg}</p>`
+        chat.innerHTML+=`<p><b>AI:</b> ${data.reply}</p>`
+
+        input.value=""
+
+    })
+
+}
+
+</script>
+
+{% endblock %}
