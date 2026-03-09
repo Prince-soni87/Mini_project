@@ -6,6 +6,22 @@
 
     <h3 class="text-center mb-4">Login</h3>
 
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ message }}
+                    </div>
+                {% elif category == 'success' %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     <form method="post">
 
         <input name="email" class="form-control mb-3" placeholder="Email">
@@ -15,6 +31,8 @@
         <button class="btn btn-dark w-100">Login</button>
 
     </form>
+
+    <p class="text-center mt-3">Don't have an account? <a href="/auth/register">Register here</a></p>
 
 </div>
 

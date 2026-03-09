@@ -83,9 +83,9 @@
 
                 <h5>Upload Pricing Data</h5>
 
-                <form method="POST" enctype="multipart/form-data">
+                <form id="uploadForm" method="POST" enctype="multipart/form-data" onsubmit="validateFile(event)">
 
-                    <input type="file" name="file" class="form-control mb-3">
+                    <input type="file" id="fileInput" name="file" class="form-control mb-3">
 
                     <button class="btn btn-success" type="submit">
                         Upload CSV
@@ -131,19 +131,42 @@
 
 <script>
 
-    function sendMessage() {
+    function validateFile(event) {
+        let fileInput = document.getElementById("fileInput");
+        
+        if (!fileInput.value) {
+            alert("Please choose a file first on dashboard");
+            event.preventDefault();
+            return false;
+        }
+        return true;
+    }
+
+    function sendMessage(event) {
+
+        // Prevent button default action
+        if (event) event.preventDefault();
 
         let input = document.getElementById("user-input")
+        let msg = input.value.trim()
+        let sendBtn = document.querySelector('button[onclick*="sendMessage"]')
 
-        let msg = input.value
+        // Validate input
+        if (!msg) {
+            alert("Please enter a message first");
+            return;
+        }
+
+        // Disable button to prevent multiple submissions
+        sendBtn.disabled = true
+        let originalText = sendBtn.textContent
+        sendBtn.textContent = "Sending..."
 
         fetch("/api/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message: msg })
         })
-
-
             .then(res => res.json())
             .then(data => {
 
@@ -153,13 +176,19 @@
                 chat.innerHTML += `<p><b>AI:</b> ${data.reply}</p>`
 
                 input.value = ""
+                chat.scrollTop = chat.scrollHeight
 
             })
             .catch(err => {
 
                 let chat = document.getElementById("chat-box")
-                chat.innerHTML += `<p><b>AI:</b> Server error. Please try again.</p>`
+                chat.innerHTML += `<p style="color:red;"><b>Error:</b> Failed to get response. Please try again.</p>`
 
+            })
+            .finally(() => {
+                // Re-enable button after request completes
+                sendBtn.disabled = false
+                sendBtn.textContent = originalText
             })
 
     }
