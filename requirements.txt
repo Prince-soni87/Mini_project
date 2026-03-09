@@ -5,3 +5,5 @@ Flask-Bcrypt
 pandas
 numpy
 scikit-learn
+google-generativeai>=0.7.0
+python-dotenv

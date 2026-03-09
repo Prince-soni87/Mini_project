@@ -1,27 +1,30 @@
-from google import genai
+import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 
-
+# Load environment variables
 load_dotenv()
-client=genai.Client(api_key=os.getenv("GENAI_API_KEY"))
+
+# Configure Gemini API
+genai.configure(api_key=os.getenv("GENAI_API_KEY"))
 
 def analyze_pricing(data):
 
     prompt = f"""
-    You are an expert revenue optimizer.
-    explain the reason behind the predicted price and suggest improvements to increase profit margin by 15%.
+You are an expert revenue optimizer.
 
-    Analyze this dataset and suggest pricing improvements
-    to increase profit margin by 15%.
+Explain the reason behind the predicted price and suggest improvements 
+to increase profit margin by 15%.
 
-    User question:
-    {data}
-    """
+Analyze this dataset and suggest pricing improvements
+to increase profit margin by 15%.
 
-    response = client.models.generate_content(
-        model="gemini-2.0-flash",
-        contents=prompt
-    )
+User question:
+{data}
+"""
+
+    model = genai.GenerativeModel("gemini-1.5-flash")
+
+    response = model.generate_content(prompt)
 
     return response.text
