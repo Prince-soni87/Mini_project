@@ -2,14 +2,58 @@
 
 {% block content %}
 
-<div class="text-center hero">
+<div class="landing-wrapper">
+  <!-- Animated Background -->
+  <div class="animated-bg">
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+  </div>
 
-<h1 class="display-4">AI Powered Pricing Optimization</h1>
+  <!-- Hero Section -->
+  <div class="hero-container">
+    <div class="text-center hero">
+      <h1 class="display-4 hero-title">AI Powered Pricing Optimization</h1>
+      <p class="lead hero-subtitle">Upload your product data and let AI find the best price</p>
+      <a href="/auth/register" class="btn btn-primary btn-lg mt-4 cta-btn">Start Now</a>
+    </div>
 
-<p class="lead">Upload your product data and let AI find the best price</p>
+    <!-- Feature Cards -->
+    <div class="features-grid">
+      <div class="feature-card card-1">
+        <div class="feature-icon">📊</div>
+        <h5>Smart Analytics</h5>
+        <p>AI-powered insights for optimal pricing strategies</p>
+      </div>
+      
+      <div class="feature-card card-2">
+        <div class="feature-icon">🚀</div>
+        <h5>Real-Time Updates</h5>
+        <p>Get instant price recommendations</p>
+      </div>
+      
+      <div class="feature-card card-3">
+        <div class="feature-icon">💡</div>
+        <h5>AI Chat Assistant</h5>
+        <p>Chat with AI to optimize your pricing</p>
+      </div>
 
-<a href="/auth/register" class="btn btn-primary btn-lg mt-3">Start Now</a>
+      <div class="feature-card card-4">
+        <div class="feature-icon">📈</div>
+        <h5>Revenue Growth</h5>
+        <p>Maximize profit margins intelligently</p>
+      </div>
+    </div>
 
+    <!-- Dot Pattern Decoration -->
+    <div class="floating-dots">
+      <div class="dot dot-1"></div>
+      <div class="dot dot-2"></div>
+      <div class="dot dot-3"></div>
+      <div class="dot dot-4"></div>
+      <div class="dot dot-5"></div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
