@@ -1,6 +1,6 @@
-ps/
+venv/
 __pycache__/
 *.pyc
 .env
-database.db
-app/static/uploads/
+instance/
+*.db
