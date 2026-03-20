@@ -1,40 +1,134 @@
-# Mini_project
+# 🚀 AI-Powered Pricing Intelligence & Revenue Optimization Platform
 
-<h1>  AI-Powered Pricing Intelligence & Dynamic Revenue Optimization Platform</h1>
-Project Overview
+## 📌 Overview
 
-Pricing is a very crucial factor for the success of any business. If the price is set too high, it may lead to a decrease in sales, and if the price is set too low, it may lead to a decrease in profit.
+This project is a web-based platform that uses **Artificial Intelligence and Machine Learning** to optimize product pricing dynamically.
+It analyzes historical sales data, demand trends, and market conditions to suggest optimal prices that maximize revenue and profit.
 
-This project is an AI-powered pricing intelligence system that helps businesses automatically determine the optimal price for their products.
-The system uses demand, past sales, and market trends to provide optimal prices in real-time that can maximize revenue and profit.
+---
 
-This project is based on real-world systems that are used by companies such as Amazon, Uber, and Airbnb.
-<h1>Problem Statement</h1>
+## 🎯 Problem Statement
 
-<h2>The traditional pricing approaches are:</h2>
-<br>
-Static (rarely change prices)
-<br>
-Manual (human-dependent)<br>
-React slowly to market changes<br><br>
-<h1>This has led to:</h1><br>
-Loss of potential revenue<br>
-Missing out on demand<br>
-Inability to compete with dynamic markets<br>
+Traditional pricing systems:
 
-markets
+* Use static pricing (rarely updated)
+* Depend on manual decisions
+* Fail to react quickly to market changes
 
-<h1>Solution</h1><br>
-<hr>
-<h3>This solution employs AI and Machine Learning for:</h3><br>
-Analyzing past sales and pricing data<br>
-Predicting customer demand<br>
-Dynamic pricing optimization<br>
-Suggesting the optimal price at the optimal time<br>
-The system will automatically change prices based on:<br>
-Demand trends<br>
-Past performance<br>
-Market trends<br>
-Business rules (minimum and maximum price)
+This leads to:
 
+* Revenue loss
+* Missed demand opportunities
+* Poor competitiveness
 
+---
+
+## 💡 Solution
+
+This system solves the problem using AI/ML by:
+
+* 📊 Analyzing past sales data
+* 📈 Predicting demand
+* 💰 Recommending optimal prices
+* 🤖 Providing an AI-powered chat assistant
+
+---
+
+## ⚙️ Features
+
+* 🔐 User Authentication (Login/Register)
+* 📂 CSV File Upload for pricing data
+* 🤖 AI-based Price Prediction
+* 📊 Analytics Dashboard
+* 💬 AI Chat Assistant
+* ⚡ Real-time pricing recommendations
+
+---
+
+## 🛠️ Tech Stack
+
+* Backend: Flask (Python)
+* Machine Learning: Scikit-learn, Pandas, NumPy
+* Database: SQLite (via Flask-SQLAlchemy)
+* Frontend: HTML, CSS, JavaScript
+* AI Integration: Google Generative AI
+
+---
+
+## 📁 Project Structure
+
+```
+Mini_project/
+│
+├── app/
+│   ├── __init__.py
+│   ├── extensions.py
+│   ├── models.py
+│
+│   ├── auth/          # login, register
+│   ├── api/           # routes / endpoints
+│   ├── ml/            # ML models
+│   ├── ai/            # chatbot logic
+│   ├── utils/         # helpers
+│
+│   ├── templates/     # HTML
+│   ├── static/        # CSS, JS
+│
+├── config.py
+├── run.py
+├── requirements.txt
+├── README.md
+```
+
+---
+
+## ▶️ How to Run
+
+### 1. Clone the repository
+
+```
+git clone https://github.com/Prince-soni87/Mini_project.git
+cd Mini_project
+```
+
+### 2. Create virtual environment
+
+```
+python -m venv venv
+venv\Scripts\activate   (Windows)
+```
+
+### 3. Install dependencies
+
+```
+pip install -r requirements.txt
+```
+
+### 4. Run the app
+
+```
+python run.py
+```
+
+---
+
+## 📊 Future Improvements
+
+* 🔄 Automated model retraining
+* 📈 Advanced analytics & graphs
+* 🌐 Real-time market data integration
+* 🔐 Improved security (validation, rate limiting)
+
+---
+
+## 👨‍💻 Contributors
+
+* Gopal Sharma
+* Prince Soni
+* Akash Gaurav
+
+---
+
+## ⭐ Status
+
+🚧 MVP (Minimum Viable Product) – Under Improvement
